@@ -43,7 +43,6 @@ try {
 		socketController(io, socket);
 	})
 
-	// jalankan express
 	server.listen(process.env.PORT, () => {
 		console.log("SERVICE IS RUNNING ON PORT " + process.env.PORT);
 	});

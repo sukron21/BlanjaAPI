@@ -1,4 +1,5 @@
 const productModel = require('../model/product.model');
+const cloudinary = require("../helper/cloudinary");
 const { failed, success } = require('../helper/response');
 
 const productController = {
@@ -47,9 +48,9 @@ const productController = {
         failed(res, err.message, 'failed', 'failed to find product by name');
       });
   },
-  insert: (req, res) => {
+  insert: async(req, res) => {
     try {
-      const photo = req.file.filename;
+      const image = await cloudinary.uploader.upload(req.file.path);
       const { seller, product_name, price, stock, condition, color, size, category, description } = req.body;
 
       const data = {
@@ -58,7 +59,7 @@ const productController = {
         price,
         stock,
         condition,
-        photo,
+        photo: `${image.secure_url}|&&|${image.public_id}`,
         color,
         size,
         category,
@@ -114,15 +115,15 @@ const productController = {
     }
   },
 
-  updatePhoto: (req, res) => {
+  updatePhoto: async(req, res) => {
     try {
-      const id = req.params.id;
-      const photo = req.file.filename;
+      const id = await req.params.id;
+      const photo = await cloudinary.uploader.upload(req.file.path);
 
       productModel
         .selectJoin(id)
         .then(async (result) => {
-          const img = result.rows[0].photo + '||' + photo;
+          const img = result.rows[0].photo + '||' + `${photo.secure_url}|&&|${photo.public_id}`;
 
           const data = {
             id,

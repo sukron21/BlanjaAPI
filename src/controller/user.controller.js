@@ -1,5 +1,6 @@
 const userModel = require('../model/user.model');
 const chatModel = require('../model/chat.model');
+const cloudinary = require("../helper/cloudinary");
 const {successWithToken ,failed, success}= require('../helper/response');
 const bcrypt= require('bcrypt');
 const jwtToken = require('../helper/generateJWT');
@@ -136,9 +137,9 @@ const userController = {
 
   updatePhoto: async(req, res) => {
     const id = req.params.id;
-    const image  = req.file.filename;
+    const image  = await cloudinary.uploader.upload(req.file.path);
 
-    await userModel.updatePhoto(id, image)
+    await userModel.updatePhoto(id, `${image.secure_url}|&&|${image.public_id}`)
     .then((result) => {
       success(res, result.rowCount, "success", "update photo success");
     })
@@ -184,7 +185,7 @@ const userController = {
           email,
           password: hash,
           user_type,
-          image: "default.png",
+          image: "https://res.cloudinary.com/dmkviiqax/image/upload/v1670786753/default_qux8xg.jpg",
           phone,
           store_desc,
         }

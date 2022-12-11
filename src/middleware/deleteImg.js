@@ -1,4 +1,4 @@
-const fs = require('fs');
+const cloudinary = require("../helper/cloudinary");
 const productModel = require('../model/product.model');
 const userModel = require ('../model/user.model')
 
@@ -10,13 +10,9 @@ module.exports = {
 		if(data) {
 			if (data.rows[0].photo) {
 				const img = data.rows[0].photo;
-				img.split('||').map((e) => {
-					if (e !== "abc.png") {
-						fs.unlink(`./public/${e}`, (err) => {
-							if (err) {
-								console.log(err)
-							}
-						});
+				img.split('||').map(async(e) => {
+					if (e.split('|&&|')[0] !== "https://res.cloudinary.com/dmkviiqax/image/upload/v1670740075/null_jxiqhn.jpg") {
+						await cloudinary.uploader.destroy(e.split('|&&|')[1]);
 					}
 				})
 				
@@ -36,12 +32,8 @@ module.exports = {
 		if(data) {
 			if (data.rows[0].image) {
 				const img = data.rows[0].image;
-				if (img !== "default.png") {
-					fs.unlink(`./public/${img}`, (err) => {
-						if (err) {
-							console.log(err)
-						}
-					});
+				if (img.split('|&&|')[0] !== "https://res.cloudinary.com/dmkviiqax/image/upload/v1670786753/default_qux8xg.jpg") {
+					await cloudinary.uploader.destroy(img.split('|&&|')[1]);
 				}
 
 				next();

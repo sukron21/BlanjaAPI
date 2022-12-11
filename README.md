@@ -5,6 +5,9 @@
   <p align="center">
     <image align="center" width="200" src='./assets/' />
   </p>
+  <p align="center">
+    <a href="#">View API Demo</a>
+  </p>
 </p>
 
 
@@ -34,6 +37,7 @@ Blanja API is a RESTful API used in [Blanja Aplication](https://github.com/reiji
 * [Express JS](https://expressjs.com/)
 * [PostgreSQL](https://www.postgresql.org/)
 * [Socket.IO](https://socket.io/)
+* [Cloudinary](https://cloudinary.com/)
 
 
 <!-- GETTING STARTED -->
@@ -49,7 +53,7 @@ This is an example of things you need to use the application and how to install 
 
 1. Clone the repo
 ```sh
-git clone https://github.com/reijiren/Blanja-Application.git
+git clone https://github.com/reijiren/BlanjaAPI.git
 ```
 2. Install NPM packages
 ```sh
@@ -64,6 +68,9 @@ DB_PASSWORD = your_db_password
 DB_PORT = your_db_port
 PORT = 3001
 JWT_SECRET = your_token_secret
+CLOUD_NAME = your_cloudinary_name
+API_KEY = your_cloudinary_api_key
+API_SECRET = your_cloudinary_api_secret
 ```
 
 
@@ -85,7 +92,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- RELATED PROJECT -->
 ## Related Project
 Blanja frontend documentation
-* [Blanja Application](https://github.com/reijiren/BlanjaApp)
+* [View Documentation](https://github.com/reijiren/BlanjaApp)
 
 
 <!-- CONTACT -->

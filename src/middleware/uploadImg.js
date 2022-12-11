@@ -2,23 +2,9 @@ const multer = require('multer');
 const path = require('path');
 
 const currentDate = new Date();
-const dateTime = currentDate.getDate() + '' + (currentDate.getMonth()+1) + '' + currentDate.getFullYear();
-const timestamp = currentDate.getHours() + '' + currentDate.getMinutes() + '' + currentDate.getSeconds() + '' + currentDate.getMilliseconds();
 
 const multerUpload = multer({
-    storage: multer.diskStorage({
-        destination: (req, file, cb) => {[
-            cb(null, './public')
-        ]},
-        filename: (req, file, cb) => {
-            const name = path.basename(file.originalname);
-            const ext = path.extname(file.originalname);
-            const nameSplit = name.split(`${ext}`);
-
-            const fileName = nameSplit[0] + '-' + dateTime + timestamp + ext;
-            cb(null, fileName);
-        }
-    }),
+    storage: multer.diskStorage({}),
     
     fileFilter: (req, file, cb) => {
         const ext = path.extname(file.originalname);
@@ -40,10 +26,9 @@ module.exports = {
         multerSingle(req, res, (err) => {
             if(err){
                 res.json({
-                    message: 'upload product photo failed bor',
+                    message: 'upload product photo failed',
                     error: err
                 })
-                console.log(err);
             }else{
                 next();
             }
@@ -58,7 +43,6 @@ module.exports = {
                     message: 'upload user image failed',
                     error: err
                 })
-                console.log(err);
             }else{
                 next();
             }
