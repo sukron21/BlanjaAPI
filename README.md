@@ -16,7 +16,8 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Built With](#built-with)
+  * [Project Structure](#project-structure)
+  * [Package Modules](#package-modules)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
@@ -29,15 +30,42 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Blanja API is a RESTful API used in [Blanja Aplication](https://github.com/reijiren/Blanja-Application). This API handle user management (customer & seller), get lists of products, product detail, and order operation (mybag, checkout, & myorder).
+Blanja API is a RESTful API used in [Blanja Aplication](https://blanja-yksd.vercel.app). This API handle user management (customer & seller), get lists of products, product detail, and order operation (mybag, checkout, & myorder).
 
-### Built With
+### Project Structure
+```
+|── BlanjaAPI
+   |── public                           # Public assets
+   |── src                              # Project source code
+       |── assets                       # Application assets
+       |── components                   # Application components
+       |── pages                        # Pages source code
+       |── redux                        # State management
+       |── router                       # Endpoint
+   |── .env                             # Environment variables   
+   |── .gitignore                       # Files that should be ignored  
+   |── db.sql                           # SQL database creation
+   |── Blanja.postman_collection.json   # Postman Documentation
+   |── index.js                         # Index file
+   |── README.md                        # Readme
+```
+
+### Package Modules
+
+Below are lists of modules used in this API:
 
 * [Node JS](https://nodejs.org/en/docs/)
 * [Express JS](https://expressjs.com/)
 * [PostgreSQL](https://www.postgresql.org/)
 * [Socket.IO](https://socket.io/)
 * [Cloudinary](https://cloudinary.com/)
+* [Dotenv](https://www.npmjs.com/package/dotenv)
+* [Bcrypt](https://www.npmjs.com/package/bcrypt)
+* [CORS](https://www.npmjs.com/package/cors)
+* [JSONWebToken](https://www.npmjs.com/package/jsonwebtoken)
+* [Multer](https://www.npmjs.com/package/multer)
+* [Nodemon](https://www.npmjs.com/package/nodemon)
+* [Pg](https://www.npmjs.com/package/pg)
 
 
 <!-- GETTING STARTED -->
@@ -91,7 +119,7 @@ Contributions are what make the open source community such an amazing place to b
 
 <!-- RELATED PROJECT -->
 ## Related Project
-Blanja frontend documentation
+This API is used in [Blanja Application](https://blanja-yksd.vercel.app).
 * [View Documentation](https://github.com/reijiren/BlanjaApp)
 
 
