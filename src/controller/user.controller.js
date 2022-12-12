@@ -137,7 +137,7 @@ const userController = {
 
   updatePhoto: async(req, res) => {
     const id = req.params.id;
-    const image  = await cloudinary.uploader.upload(req.file.path);
+    const image  = await cloudinary.uploader.upload(req.file?.path);
 
     await userModel.updatePhoto(id, `${image.secure_url}|&&|${image.public_id}`)
     .then((result) => {
