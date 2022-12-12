@@ -6,7 +6,7 @@
     <image align="center" width="200" src='./assets/' />
   </p>
   <p align="center">
-    <a href="#">View API Demo</a>
+    <a href="https://blanja-yakusadi.up.railway.app">View API Demo</a>
   </p>
 </p>
 
