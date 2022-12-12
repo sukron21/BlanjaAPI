@@ -46,8 +46,8 @@ Blanja API is a RESTful API used in [Blanja Aplication](https://blanja-yksd.verc
        |── socket                       # Socket model
    |── .env                             # Environment variables   
    |── .gitignore                       # Files that should be ignored  
-   |── db.sql                           # SQL database creation
    |── Blanja.postman_collection.json   # Postman Documentation
+   |── db.sql                           # SQL database creation
    |── index.js                         # Index file
    |── README.md                        # Readme
 ```
