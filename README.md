@@ -37,11 +37,13 @@ Blanja API is a RESTful API used in [Blanja Aplication](https://blanja-yksd.verc
 |── BlanjaAPI
    |── public                           # Public assets
    |── src                              # Project source code
-       |── assets                       # Application assets
-       |── components                   # Application components
-       |── pages                        # Pages source code
-       |── redux                        # State management
-       |── router                       # Endpoint
+       |── config                       # Database configuration
+       |── controller                   # Request controller
+       |── helper                       # Cloudinary setting, Env setting, JWT generation and response
+       |── middleware                   # Middleware configuration
+       |── model                        # Database query model
+       |── routes                       # API Endpoint routes
+       |── socket                       # Socket model
    |── .env                             # Environment variables   
    |── .gitignore                       # Files that should be ignored  
    |── db.sql                           # SQL database creation
