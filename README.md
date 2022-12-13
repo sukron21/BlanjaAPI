@@ -3,7 +3,7 @@
 
   <h3 align="center">Blanja API</h3>
   <p align="center">
-    <image align="center" width="200" src='./assets/' />
+    <image align="center" width="200" src='./public/blanja_logo.png' />
   </p>
   <p align="center">
     <a href="https://blanja-yakusadi.up.railway.app">View API Demo</a>
