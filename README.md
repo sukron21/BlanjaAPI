@@ -83,7 +83,7 @@ This is an example of things you need to use the application and how to install 
 
 1. Clone the repo
 ```sh
-git clone https://github.com/reijiren/BlanjaAPI.git
+git clone https://github.com/sukron21/BlanjaAPI.git
 ```
 2. Install NPM packages
 ```sh
@@ -122,7 +122,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- RELATED PROJECT -->
 ## Related Project
 This API is used in [Blanja Application](https://blanja-yksd.vercel.app).
-* [View Documentation](https://github.com/reijiren/BlanjaApp)
+* [Frontend](https://github.com/sukron21/BlanjaApp)
 
 
 <!-- CONTACT -->
