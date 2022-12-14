@@ -121,7 +121,7 @@ Contributions are what make the open source community such an amazing place to b
 
 <!-- RELATED PROJECT -->
 ## Related Project
-This API is used in [Blanja Application](https://blanja-yksd.vercel.app).
+[Deploy APP](https://blanja-yksd.vercel.app/) used in this application.
 * [Frontend](https://github.com/sukron21/BlanjaApp)
 
 
