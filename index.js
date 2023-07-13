@@ -5,8 +5,8 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const helmet = require("helmet");
 const xss = require("xss-clean");
-const socket = require('socket.io');
-const socketController = require('./src/socket/index');
+// const socket = require('socket.io');
+// const socketController = require('./src/socket/index');
 const http = require('http');
 const userRouter = require('./src/routes/user.routes.js');
 const productRouter = require ('./src/routes/product.routes');
@@ -28,20 +28,20 @@ try {
 	app.use(address)
 
 	const server = http.createServer(app);
-	const io = socket(server, {
-		cors: {
-			origin: '*',
-		}
-	})
+	// const io = socket(server, {
+	// 	cors: {
+	// 		origin: '*',
+	// 	}
+	// })
 
-	let count = 0;
+	// let count = 0;
 
-	io.on('connection', (socket) => {
-		console.log('new user connected ' + count);
+	// io.on('connection', (socket) => {
+	// 	console.log('new user connected ' + count);
 
-		count = count + 1;
-		socketController(io, socket);
-	})
+	// 	count = count + 1;
+	// 	socketController(io, socket);
+	// })
 
 	server.listen(process.env.PORT, () => {
 		console.log("SERVICE IS RUNNING ON PORT " + process.env.PORT);
